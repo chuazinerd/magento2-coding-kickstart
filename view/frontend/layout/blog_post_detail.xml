@@ -1,9 +1,11 @@
 <?xml version="1.0"?>
-<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="main">
-            <block name="blog.detail" template="Chuazinerd_Blog::post/detail.phtml"/>
-            <block name="blog.sidebar" template="Chuazinerd_Blog::post/sidebar.phtml"/>
+            <block name="blog.post.detail" template="Chuazinerd_Blog::post/detail.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="sidebar.additional">
+            <block name="blog.post.sidebar" template="Chuazinerd_Blog::post/sidebar.phtml"/>
         </referenceContainer>
     </body>
 </page>
