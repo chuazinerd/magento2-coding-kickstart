@@ -8,6 +8,6 @@
         <referenceContainer name="sidebar.main">
             <block name="blog.post.sidebar" template="Chuazinerd_Blog::post/sidebar.phtml"/>
         </referenceContainer>
-        <referenceBlock name="catalog.compare.sidebar" display="false" />
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>
     </body>
 </page>
