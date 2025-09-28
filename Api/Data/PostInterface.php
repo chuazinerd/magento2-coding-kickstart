@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Macademy\Blog\Api\Data;
+namespace Chuazinerd\Blog\Api\Data;
 
-use Magento\Tests\NamingConvention\true\string;
+//use Magento\Tests\NamingConvention\true\string;
 
 /**
  * Blog post interface.
