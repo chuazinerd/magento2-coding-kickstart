@@ -1,0 +1,58 @@
+<?php declare(strict_types=1);
+
+namespace Macademy\Blog\Api\Data;
+
+use Magento\Tests\NamingConvention\true\string;
+
+/**
+ * Blog post interface.
+ * @api
+ * @since 1.0.0
+ */
+
+// 1.0.0... 1 = breaking, 0 = feature, 0 = fix
+interface PostInterface
+{
+    const ID = 'id';
+    const TITLE = 'title';
+    const CONTENT = 'content';
+    const CREATED_AT = 'created_at';
+// /** @return or @param are good practice*/
+    /**
+     * @return int
+     */
+    public function getId();
+
+    /**
+     * @param int $value
+     * @return $this
+     */
+    public function setId($value);
+
+    /**
+     * @return string
+     */
+    public function getTitle();
+
+    /**
+     * @param string $title
+     * @return $this
+     */
+    public function setTitle($title);
+
+    /**
+     * @return string
+     */
+    public function getContent();
+
+    /**
+     * @param string $content
+     * @return $this
+     */
+    public function setContent($content);
+
+    /**
+     * @return string
+     */
+    public function getCreatedAt();
+}
