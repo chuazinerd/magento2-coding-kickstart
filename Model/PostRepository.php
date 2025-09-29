@@ -27,4 +27,15 @@ class PostRepository implements PostRepositoryInterface
 
         return $post;
     }
+
+    public function save(PostInterface $post): PostInterface
+    {
+        try {
+            $this->postResourceModel->save($post);
+        } catch (\Exception $exception) {
+           throw new CouldNotSaveException(__($exception->getMessage()));
+        }
+        return $post;
+    }
+
 }
