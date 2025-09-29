@@ -2,7 +2,7 @@
 
 namespace Chuazinerd\Blog\Api;
 
-use Macademy\Blog\Api\Data\PostInterface;
+use Chuazinerd\Blog\Api\Data\PostInterface;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Exception\NoSuchEntityException;
 
