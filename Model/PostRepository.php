@@ -38,4 +38,17 @@ class PostRepository implements PostRepositoryInterface
         return $post;
     }
 
+    public function deleteById(int $id): bool
+    {
+        $post = $this->getById($id);
+
+        try {
+            $this->postResourceModel->delete($post);
+        } catch (\Exception $exception) {
+            throw new CouldNotDeleteException(__($exception->getMessage()));
+        }
+
+        return true;
+    }
+
 }
