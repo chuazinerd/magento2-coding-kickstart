@@ -2,7 +2,8 @@
 
 namespace Chuazinerd\Blog\Setup\Patch\Data;
 
-use Macademy\Blog\Model\PostFactory;
+use Chuazinerd\Blog\Api\PostRepositoryInterface;
+use Chuazinerd\Blog\Model\PostFactory;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Setup\Patch\PatchInterface;

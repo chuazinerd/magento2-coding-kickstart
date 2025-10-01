@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Chuazinerd\Blog\Api\PostInterface" type="Chuazinerd\Blog\Model\Post"/>
-    <preference for="Chuazinerd\Blog\Api\Data\PostRepositoryInterface" type="Chuazinerd\Blog\Model\PostRepository"/>
+    <preference for="Chuazinerd\Blog\Api\Data\PostInterface" type="Chuazinerd\Blog\Model\Post"/>
+    <preference for="Chuazinerd\Blog\Api\PostRepositoryInterface" type="Chuazinerd\Blog\Model\PostRepository"/>
 </config>
