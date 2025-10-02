@@ -8,7 +8,7 @@ use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Setup\Patch\PatchInterface;
 
-class PopulateBlogPosts implements DataPatchInterface
+class CreateBlogPostsV1 implements DataPatchInterface
 {
     public function __construct(
         private ModuleDataSetupInterface $moduleDataSetup,
@@ -29,14 +29,12 @@ class PopulateBlogPosts implements DataPatchInterface
     public function apply()
     {
         $this->moduleDataSetup->startSetup();
-
         $post = $this->postFactory->create();
         $post->setData([
-            'title' => 'An awesome post',
-            'content' => 'This is totally awesome!',
+           'title' => 'An awesome post',
+           'content' => 'This is totally awesome!',
         ]);
         $this->postRepository->save($post);
-
         $this->moduleDataSetup->endSetup();
     }
 }
