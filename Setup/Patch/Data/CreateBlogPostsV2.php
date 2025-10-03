@@ -32,7 +32,7 @@ class CreateBlogPostsV2 implements DataPatchInterface
         $post = $this->postFactory->create();
         $post->setData([
             'title' => 'Today is sunny',
-            'content' => 'The wather has been great all week',
+            'content' => 'The weather has been great all week',
         ]);
         $this->postRepository->save($post);
         $this->moduleDataSetup->endSetup();

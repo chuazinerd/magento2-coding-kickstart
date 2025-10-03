@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Macademy\Blog\ViewModel;
+namespace Chuazinerd\Blog\ViewModel;
 
 use Magento\Framework\DataObject;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
@@ -15,5 +15,9 @@ class Post implements ArgumentInterface
             new DataObject(['id' => 3, 'title' => 'Post C']),
         ];
     }
-}
 
+    public function getCount(): int
+    {
+        return count($this->getList());
+    }
+}
