@@ -10,31 +10,31 @@ use Magento\Framework\Setup\Patch\PatchInterface;
 
 class CreateBlogPostsV3 implements DataPatchInterface
 {
-    public function __construct(
-        private ModuleDataSetupInterface $moduleDataSetup,
-        private PostFactory $postFactory,
-        private PostRepositoryInterface $postRepository,
-    ) {}
+public function __construct(
+    private ModuleDataSetupInterface $moduleDataSetup,
+    private PostFactory $postFactory,
+    private PostRepositoryInterface $postRepository,
+) {}
 
-    public static function getDependencies(): array
-    {
-        return [];
-    }
+public static function getDependencies(): array
+{
+    return [];
+}
 
-    public function getAliases(): array
-    {
-        return [];
-    }
+public function getAliases(): array
+{
+    return [];
+}
 
-    public function apply()
-    {
-        $this->moduleDataSetup->startSetup();
-        $post = $this->postFactory->create();
-        $post->setData([
-            'title' => 'My movie review',
-            'content' => 'I give this movie 5 out of 5 stars!',
-        ]);
-        $this->postRepository->save($post);
-        $this->moduleDataSetup->endSetup();
-    }
+public function apply()
+{
+    $this->moduleDataSetup->startSetup();
+    $post = $this->postFactory->create();
+    $post->setData([
+        'title' => 'My movie review',
+        'content' => 'I give this movie 5 out of 5 stars!',
+    ]);
+    $this->postRepository->save($post);
+    $this->moduleDataSetup->endSetup();
+}
 }
