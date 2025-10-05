@@ -3,6 +3,7 @@
 namespace Chuazinerd\Blog\Controller\Post;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
+use Magento\Framework\App\RequestInterface;
 use Magento\Framework\Event\ManagerInterface as EventManager;
 use Magento\Framework\View\Result\Page;
 use Magento\Framework\View\Result\PageFactory;
@@ -19,7 +20,7 @@ class Detail implements HttpGetActionInterface
 
     public function execute() : Page
     {
-        $this->eventManager->dispatch('macademy_blog_post_detail_view', [
+        $this->eventManager->dispatch('chuazinerd_blog_post_detail_view', [
             'request' => $this->request,
         ]);
     return $this->pageFactory->create();
