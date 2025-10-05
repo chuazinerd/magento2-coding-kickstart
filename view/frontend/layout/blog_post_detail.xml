@@ -1,10 +1,12 @@
 <?xml version="1.0"?>
-<page layout="2columns-right"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page layout="2columns-right" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="main">
-            <block name="blog.post.detail" template="Chuazinerd_Blog::post/detail.phtml"/>
+            <block name="blog.post.detail" template="Chuazinerd_Blog::post/detail.phtml">
+                <arguments>
+                    <argument name="post_vm" xsi:type="object">Chuazinerd\Blog\ViewModel\Post</argument>
+                </arguments>
+            </block>
         </referenceContainer>
         <referenceContainer name="sidebar.main">
             <block name="blog.post.sidebar" template="Chuazinerd_Blog::post/sidebar.phtml">

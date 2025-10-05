@@ -2,16 +2,18 @@
 
 namespace Chuazinerd\Blog\ViewModel;
 
+use Chuazinerd\Blog\Api\Data\PostInterface;
+use Chuazinerd\Blog\Api\PostRepositoryInterface;
 use Chuazinerd\Blog\Model\ResourceModel\Post\Collection;
+use Magento\Framework\App\RequestInterface;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
 
 class Post implements ArgumentInterface
 {
-
     public function __construct(
-        //With Collection, it retrieved the information from the Colletion class,
-        //replacing the static insertions created previously.
         private Collection $collection,
+        private PostRepositoryInterface $postRepository,
+        private RequestInterface $request,
     ) {}
 
     public function getList(): array
@@ -22,5 +24,11 @@ class Post implements ArgumentInterface
     public function getCount(): int
     {
         return $this->collection->count();
+    }
+
+    public function getDetail(): PostInterface
+    {
+        $id = (int) $this->request->getParam('id');
+        return $this->postRepository->getById($id);
     }
 }
