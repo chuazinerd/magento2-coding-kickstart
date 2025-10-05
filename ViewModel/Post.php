@@ -7,7 +7,10 @@ use Magento\Framework\View\Element\Block\ArgumentInterface;
 
 class Post implements ArgumentInterface
 {
+
     public function __construct(
+        //With Collection, it retrieved the information from the Colletion class,
+        //replacing the static insertions created previously.
         private Collection $collection,
     ) {}
 
